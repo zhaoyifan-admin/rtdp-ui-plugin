@@ -1,21 +1,5 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png" />
-    <div class="hello">
-      <h3>
-        <a href="https://github.com/hql7/tree-transfer" target="_block">GitHub</a>
-        <a href="https://www.npmjs.com/package/el-tree-transfer" target="_block">NPM</a>
-        <a href="https://segmentfault.com/a/1190000015553081" target="_block"
-          >SegmentFault</a
-        >
-        <a
-          href="https://blog.csdn.net/qq_15390381/article/details/80943549"
-          target="_block"
-          >CSDN</a
-        >
-        <a href="https://juejin.im/post/5b3ecae8e51d4519213fae4b" target="_block">掘金</a>
-      </h3>
-    </div>
     <h4 class="hello">
       <label>请打开f12查看移动数据</label>
       <el-button size="medium" type="info" @click="changeMode"
@@ -23,7 +7,7 @@
       >
     </h4>
     <div class="box">
-      <wl-tree-transfer
+      <tree-transfer
         filter
         checkStrictly
         height="540px"
@@ -41,18 +25,17 @@
         <span slot="title-right" class="my-title-right" @click="handleTitleRight"
           >自定义内容</span
         >
-      </wl-tree-transfer>
+      </tree-transfer>
     </div>
   </div>
 </template>
 
 <script>
-import WlTreeTransfer from "./components/tree-transfer/";
+// import treeTransfer from "./components/tree-transfer/";
 
 export default {
   name: "app",
   components: {
-    WlTreeTransfer,
   },
   data() {
     return {
@@ -872,21 +855,21 @@ export default {
       console.log(checkAll);
     },
     // 自定义节点 仅树形结构支持
-    renderContent(h, { node, data, store }) {
-      return (
-        <span class="custom-tree-node">
-          <span>{node.label}</span>
-          <span>
-            <el-button size="mini" type="text" on-click={() => this.append(data)}>
-              Append
-            </el-button>
-            <el-button size="mini" type="text" on-click={() => this.remove(node, data)}>
-              Delete
-            </el-button>
-          </span>
-        </span>
-      );
-    },
+    // renderContent(h, { node, data, store }) {
+    //   return (
+    //     <span class="custom-tree-node">
+    //       <span>{node.label}</span>
+    //       <span>
+    //         <el-button size="mini" type="text" on-click={() => this.append(data)}>
+    //           Append
+    //         </el-button>
+    //         <el-button size="mini" type="text" on-click={() => this.remove(node, data)}>
+    //           Delete
+    //         </el-button>
+    //       </span>
+    //     </span>
+    //   );
+    // },
     // 标题自定义区点击事件
     handleTitleRight() {
       alert("标题自定义区点击事件");

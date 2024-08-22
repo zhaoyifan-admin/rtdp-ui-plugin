@@ -1001,6 +1001,11 @@
   optionalDependencies:
     prettier "^1.18.2"
 
+"@vue/devtools-api@^6.6.3":
+  version "6.6.3"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.6.3.tgz#b23a588154cba8986bba82b6e1d0248bde3fd1a0"
+  integrity sha512-0MiMsFma/HqA6g3KLKn+AGpL1kgKhFWszC9U29NfpWK5LE7bjeXxySWJrOJ77hBz+TBrBQ7o4QJqbPbqbs8rJw==
+
 "@vue/preload-webpack-plugin@^1.1.0":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@vue/preload-webpack-plugin/-/preload-webpack-plugin-1.1.2.tgz#ceb924b4ecb3b9c43871c7a429a02f8423e621ab"
@@ -3043,6 +3048,17 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
+
+eh-ui-plugin@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/eh-ui-plugin/-/eh-ui-plugin-1.2.3.tgz#b559fdbe39246ebb1c0d0a74ff14719461abebe4"
+  integrity sha512-Pokq6sFwVsvRQXZly092xDfbVP68qn6u714gbtfxnDkFvITEe0EkApr/jxsYv6jg2IpvAKITcNC+OCdoMvNsdA==
+  dependencies:
+    core-js "^2.6.5"
+    element-ui "^2.4.5"
+    vue "^2.6.10"
+    wl-core "^1.1.7"
+    wl-tree-transfer "^1.1.1"
 
 ejs@^2.6.1:
   version "2.7.4"
@@ -8454,6 +8470,13 @@ vue-loader@^15.7.0:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-router@^4.4.3:
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.4.3.tgz#58a39dc804632bfb6d26f052aa8f6718bd130299"
+  integrity sha512-sv6wmNKx2j3aqJQDMxLFzs/u/mjA9Z5LCgy6BE0f7yFWMjrPLnS/sPNn8ARY/FXw6byV18EFutn5lTO6+UsV5A==
+  dependencies:
+    "@vue/devtools-api" "^6.6.3"
 
 vue-style-loader@^4.1.0:
   version "4.1.2"

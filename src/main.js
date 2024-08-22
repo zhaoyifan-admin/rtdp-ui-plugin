@@ -2,9 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import './plugins/element.js'
 
-/* import wl from "wl-tree-transfer";
-import "wl-tree-transfer/lib/wl-tree-transfer.css"
-Vue.use(wl); */
+import ehUiPlugin from "eh-ui-plugin";
+import "eh-ui-plugin/lib/eh-ui-plugin.css"
+Vue.use(ehUiPlugin);
 
 Vue.config.productionTip = false
 
