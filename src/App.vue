@@ -33,6 +33,8 @@
 <script>
 // import treeTransfer from "./components/tree-transfer/";
 
+import {checkIdNo} from "eh-ui-plugin";
+
 export default {
   name: "app",
   components: {

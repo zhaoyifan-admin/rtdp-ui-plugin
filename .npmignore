@@ -18,12 +18,14 @@ babel.config.js
 components.d.ts
 env.d.ts
 index.html
+demo.html
 pnpm-lock.yaml
 stats.html
 tsconfig.config.json
 tsconfig.json
 vite.config.ts
 
+*.map
 .idea
 .vscode
 *.suo
@@ -31,3 +33,5 @@ vite.config.ts
 *.njsproj
 *.sln
 *.sw?
+*.common.js
+*.umd.js

@@ -1,6 +1,6 @@
 {
   "name": "eh-ui-plugin",
-  "version": "1.2.5",
+  "version": "1.2.65",
   "private": false,
   "description": "A tree shaped shuttle box assembly based on Vue and element-ui 一个基于vue.js和element-ui的树形穿梭框，也可用于邮件通讯录",
   "author": "Tantanzi",
@@ -13,11 +13,10 @@
   "main": "lib/eh-ui-plugin.umd.min.js",
   "dependencies": {
     "core-js": "^2.6.5",
-    "eh-ui-plugin": "^1.2.5",
+    "eh-ui-plugin": "^1.2.65",
     "element-ui": "^2.4.5",
     "vue": "^2.6.10",
-    "wl-core": "^1.1.7",
-    "wl-tree-transfer": "^1.1.1"
+    "wl-core": "^1.1.7"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
