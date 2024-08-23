@@ -17,6 +17,7 @@
         :to_data="toData"
         :title="title"
         :mode="mode"
+        pid="pid"
         @add-btn="add"
         @remove-btn="remove"
         @left-check-change="leftCheckChange"
@@ -31,13 +32,14 @@
 </template>
 
 <script>
-// import treeTransfer from "./components/tree-transfer/";
+import treeTransfer from "./components/tree-transfer/";
 
-import {checkIdNo} from "eh-ui-plugin";
+// import {Message} from "element-ui";
 
 export default {
   name: "app",
   components: {
+    treeTransfer
   },
   data() {
     return {
@@ -61,7 +63,7 @@ export default {
               name: "11-3",
               children: [],
             },
-            /*    {
+            {
               id: 4,
               pid: 1,
               name: "11-4",
@@ -85,7 +87,7 @@ export default {
                   children: []
                 }
               ]
-            } */
+            }
           ],
         },
         {
@@ -177,6 +179,7 @@ export default {
     };
   },
   created() {
+    // Message.warning('strAlertMessage + strInstallOK')
     // this.defaultCheckedKeys = [1];
 
     this.$nextTick(() => {

@@ -67,7 +67,7 @@
     <div class="transfer-center">
       <template v-if="button_text">
         <p class="transfer-center-item">
-          <el-button type="primary" @click="addToAims(true)" :disabled="from_disabled">
+          <el-button type="primary" size="mini" @click="addToAims(true)" :disabled="from_disabled">
             {{ fromButton || "添加" }}
             <i class="el-icon-arrow-right"></i>
           </el-button>
@@ -75,6 +75,7 @@
         <p class="transfer-center-item">
           <el-button
             type="primary"
+            size="small"
             @click="removeToSource"
             :disabled="to_disabled"
             icon="el-icon-arrow-left"
@@ -88,7 +89,7 @@
             type="primary"
             @click="addToAims(true)"
             icon="el-icon-arrow-right"
-            circle
+            size="small"
             :disabled="from_disabled"
           ></el-button>
         </p>
@@ -98,7 +99,7 @@
             @click="removeToSource"
             :disabled="to_disabled"
             icon="el-icon-arrow-left"
-            circle
+            size="small"
           ></el-button>
         </p>
       </template>
@@ -169,9 +170,9 @@
 </template>
 
 <script>
-import { arrayToTree, flattenDeep } from "wl-core";
 import { differenceBy } from "lodash";
 import { findParents } from "../assets/js";
+import {flattenDeep, arrayToTree} from "@/components/js";
 
 export default {
   name: "TransferTree",

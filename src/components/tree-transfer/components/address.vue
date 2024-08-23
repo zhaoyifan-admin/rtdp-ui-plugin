@@ -4,9 +4,9 @@
     <div class="transfer-left">
       <h3 class="transfer-title">
         <el-checkbox
-          :indeterminate="from_is_indeterminate"
-          v-model="from_check_all"
-          @change="fromAllBoxChange"
+            :indeterminate="from_is_indeterminate"
+            v-model="from_check_all"
+            @change="fromAllBoxChange"
         ></el-checkbox>
         <span>{{ fromTitle }}</span>
       </h3>
@@ -14,83 +14,83 @@
       <div class="transfer-main">
         <slot name="from"></slot>
         <el-input
-          v-if="filter"
-          clearable
-          size="small"
-          class="filter-tree"
-          :placeholder="placeholder"
-          v-model="filterFrom"
+            v-if="filter"
+            clearable
+            size="small"
+            class="filter-tree"
+            :placeholder="placeholder"
+            v-model="filterFrom"
         ></el-input>
         <el-tree
-          ref="from-tree"
-          show-checkbox
-          :indent="indent"
-          :draggable="draggable"
-          :allow-drag="allowDrag"
-          :allow-drop="allowDrop"
-          :icon-class="iconClass"
-          :node-key="node_key"
-          :props="defaultProps"
-          :data="self_from_data"
-          :default-expand-all="openAll"
-          :highlight-current="highLight"
-          :render-content="renderContentLeft"
-          :filter-node-method="filterNodeFrom"
-          :check-on-click-node="checkOnClickNode"
-          :render-after-expand="renderAfterExpand"
-          :expand-on-click-node="expandOnClickNode"
-          :default-checked-keys="defaultCheckedKeys"
-          :default-expanded-keys="from_expanded_keys"
-          @check="fromTreeChecked"
-          @node-drag-start="nodeDragStartLeft"
-          @node-drag-enter="nodeDragEnterLeft"
-          @node-drag-leave="nodeDragLeaveLeft"
-          @node-drag-over="nodeDragOverLeft"
-          @node-drag-end="nodeDragEndLeft"
-          @node-drop="nodeDropLeft"
+            ref="from-tree"
+            show-checkbox
+            :indent="indent"
+            :draggable="draggable"
+            :allow-drag="allowDrag"
+            :allow-drop="allowDrop"
+            :icon-class="iconClass"
+            :node-key="node_key"
+            :props="defaultProps"
+            :data="self_from_data"
+            :default-expand-all="openAll"
+            :highlight-current="highLight"
+            :render-content="renderContentLeft"
+            :filter-node-method="filterNodeFrom"
+            :check-on-click-node="checkOnClickNode"
+            :render-after-expand="renderAfterExpand"
+            :expand-on-click-node="expandOnClickNode"
+            :default-checked-keys="defaultCheckedKeys"
+            :default-expanded-keys="from_expanded_keys"
+            @check="fromTreeChecked"
+            @node-drag-start="nodeDragStartLeft"
+            @node-drag-enter="nodeDragEnterLeft"
+            @node-drag-leave="nodeDragLeaveLeft"
+            @node-drag-over="nodeDragOverLeft"
+            @node-drag-end="nodeDragEndLeft"
+            @node-drop="nodeDropLeft"
         ></el-tree>
       </div>
     </div>
     <!-- 穿梭区 按钮框 -->
     <div class="transfer-center address-list-center">
       <p
-        class="transfer-center-item"
-        v-show="!move_up"
-        :class="{ 'address-only-item': addressOptions.num === 1 }"
+          class="transfer-center-item"
+          v-show="!move_up"
+          :class="{ 'address-only-item': addressOptions.num === 1 }"
       >
         <el-button
-          type="primary"
-          @click="addressListTransfer(0)"
-          icon="el-icon-arrow-right"
-          circle
-          class="address-first-btn"
-          :disabled="from_disabled"
+            type="primary"
+            @click="addressListTransfer(0)"
+            icon="el-icon-arrow-right"
+            size="small"
+            class="address-first-btn"
+            :disabled="from_disabled"
         ></el-button>
       </p>
       <p class="transfer-center-item" v-if="addressOptions.num > 1">
         <el-button
-          type="primary"
-          @click="addressListTransfer(1)"
-          :disabled="from_disabled"
-          icon="el-icon-arrow-right"
-          circle
+            type="primary"
+            @click="addressListTransfer(1)"
+            :disabled="from_disabled"
+            icon="el-icon-arrow-right"
+            size="small"
         ></el-button>
       </p>
       <p class="transfer-center-item" v-show="move_up">
         <el-button
-          type="primary"
-          @click="addressListTransfer(2)"
-          :disabled="from_disabled"
-          icon="el-icon-arrow-right"
-          circle
+            type="primary"
+            @click="addressListTransfer(2)"
+            :disabled="from_disabled"
+            icon="el-icon-arrow-right"
+            size="small"
         ></el-button>
       </p>
     </div>
     <!-- 右侧列表区 -->
     <div class="transfer-right">
       <div
-        class="transfer-right-item"
-        :class="{
+          class="transfer-right-item"
+          :class="{
           'transfer-right-small': move_up,
           'transfer-right-only': addressOptions.num === 1,
         }"
@@ -99,22 +99,22 @@
           <span>{{ toTitle }}</span>
           <span class="u-clear" @click="clearList(0, 'all')" v-if="!move_up">清空</span>
           <img
-            class="move_up_img move_down_img"
-            v-else
-            src="../assets/images/shang.png"
-            alt="icon"
-            @click="moveUp('down')"
+              class="move_up_img move_down_img"
+              v-else
+              src="../assets/images/shang.png"
+              alt="icon"
+              @click="moveUp('down')"
           />
         </h3>
         <!-- 内容区 -->
         <div class="transfer-main" v-if="!move_up">
           <slot name="to"></slot>
           <el-input
-            v-if="filter"
-            :placeholder="placeholder"
-            v-model="filterListFirst"
-            size="small"
-            class="filter-tree"
+              v-if="filter"
+              :placeholder="placeholder"
+              v-model="filterListFirst"
+              size="small"
+              class="filter-tree"
           ></el-input>
           <ul class="address-list-ul">
             <li class="address-list-li" v-for="item of addressee" :key="item[node_key]">
@@ -124,8 +124,8 @@
                 {{ item[addressOptions.suffix] }}
               </label>
               <i
-                class="address-list-del el-icon-delete"
-                @click="clearList(0, item[node_key])"
+                  class="address-list-del el-icon-delete"
+                  @click="clearList(0, item[node_key])"
               ></i>
             </li>
           </ul>
@@ -140,11 +140,11 @@
         <div class="transfer-main">
           <slot name="to"></slot>
           <el-input
-            v-if="filter"
-            :placeholder="placeholder"
-            v-model="filterListSecond"
-            size="small"
-            class="filter-tree"
+              v-if="filter"
+              :placeholder="placeholder"
+              v-model="filterListSecond"
+              size="small"
+              class="filter-tree"
           ></el-input>
           <ul class="address-list-ul">
             <li class="address-list-li" v-for="item of Cc" :key="item[node_key]">
@@ -154,44 +154,44 @@
                 {{ item[addressOptions.suffix] }}
               </label>
               <i
-                class="address-list-del el-icon-delete"
-                @click="clearList(1, item[node_key])"
+                  class="address-list-del el-icon-delete"
+                  @click="clearList(1, item[node_key])"
               ></i>
             </li>
           </ul>
         </div>
       </div>
       <div
-        v-if="addressOptions.num === 3"
-        class="transfer-right-item"
-        :class="{ 'transfer-right-small': !move_up }"
+          v-if="addressOptions.num === 3"
+          class="transfer-right-item"
+          :class="{ 'transfer-right-small': !move_up }"
       >
         <h3 class="transfer-title">
           <span>{{ toTitleThird || "密送人" }}</span>
           <span class="u-clear" @click="clearList(2, 'all')" v-if="move_up">清空</span>
           <img
-            class="move_up_img"
-            v-else
-            src="../assets/images/shang.png"
-            alt="icon"
-            @click="moveUp('up')"
+              class="move_up_img"
+              v-else
+              src="../assets/images/shang.png"
+              alt="icon"
+              @click="moveUp('up')"
           />
         </h3>
         <!-- 内容区 -->
         <div class="transfer-main" v-if="move_up">
           <slot name="to"></slot>
           <el-input
-            v-if="filter"
-            :placeholder="placeholder"
-            v-model="filterListThird"
-            size="small"
-            class="filter-tree"
+              v-if="filter"
+              :placeholder="placeholder"
+              v-model="filterListThird"
+              size="small"
+              class="filter-tree"
           ></el-input>
           <ul class="address-list-ul">
             <li
-              class="address-list-li"
-              v-for="item of secret_receiver"
-              :key="item[node_key]"
+                class="address-list-li"
+                v-for="item of secret_receiver"
+                :key="item[node_key]"
             >
               <label>
                 {{ item[defaultProps.label] }}
@@ -199,8 +199,8 @@
                 {{ item[addressOptions.suffix] }}
               </label>
               <i
-                class="address-list-del el-icon-delete"
-                @click="clearList(2, item[node_key])"
+                  class="address-list-del el-icon-delete"
+                  @click="clearList(2, item[node_key])"
               >
               </i>
             </li>
@@ -212,7 +212,7 @@
 </template>
 
 <script>
-import { arrayToTree } from "wl-core";
+import {arrayToTree} from "@/components/js";
 
 export default {
   name: "AddressBook",
@@ -269,7 +269,7 @@ export default {
     defaultProps: {
       type: Object,
       default: () => {
-        return { label: "label", children: "children" };
+        return {label: "label", children: "children"};
       },
     },
     // el-tree node-key 必须唯一
@@ -383,8 +383,8 @@ export default {
     self_from_data() {
       let from_array = [...this.from_data];
       return !this.arrayToTree
-        ? from_array
-        : arrayToTree(from_array, {
+          ? from_array
+          : arrayToTree(from_array, {
             id: this.node_key,
             pid: this.pid,
             children: this.defaultProps.children,
@@ -548,7 +548,7 @@ export default {
         case 0:
           arrayDeWeighting = arrayCheckedNodes.filter((item) => {
             if (
-              !this.addressee.some((ite) => ite[this.node_key] == item[this.node_key])
+                !this.addressee.some((ite) => ite[this.node_key] == item[this.node_key])
             ) {
               return item;
             }
@@ -566,9 +566,9 @@ export default {
         case 2:
           arrayDeWeighting = arrayCheckedNodes.filter((item) => {
             if (
-              !this.secret_receiver.some(
-                (ite) => ite[this.node_key] == item[this.node_key]
-              )
+                !this.secret_receiver.some(
+                    (ite) => ite[this.node_key] == item[this.node_key]
+                )
             ) {
               return item;
             }
@@ -591,17 +591,17 @@ export default {
       switch (type) {
         case 0:
           this.addressee =
-            id == "all" ? [] : this.addressee.filter((item) => item[this.node_key] != id);
+              id == "all" ? [] : this.addressee.filter((item) => item[this.node_key] != id);
           break;
         case 1:
           this.Cc =
-            id == "all" ? [] : this.Cc.filter((item) => item[this.node_key] != id);
+              id == "all" ? [] : this.Cc.filter((item) => item[this.node_key] != id);
           break;
         case 2:
           this.secret_receiver =
-            id == "all"
-              ? []
-              : this.secret_receiver.filter((item) => item[this.node_key] != id);
+              id == "all"
+                  ? []
+                  : this.secret_receiver.filter((item) => item[this.node_key] != id);
           break;
       }
       // 传递信息给父组件
