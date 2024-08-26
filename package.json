@@ -1,81 +1,85 @@
 {
-  "name": "eh-ui-plugin",
-  "version": "1.2.70",
-  "private": false,
-  "description": "A tree shaped shuttle box assembly based on Vue and element-ui 一个基于vue.js和element-ui的树形穿梭框，也可用于邮件通讯录",
-  "author": "Tantanzi",
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name eh-ui-plugin --dest lib src/components/index.js"
-  },
-  "main": "lib/eh-ui-plugin.umd.min.js",
-  "dependencies": {
-    "axios": "^1.7.4",
-    "core-js": "^2.6.5",
-    "eh-ui-plugin": "^1.2.65",
-    "element-ui": "^2.4.5",
-    "lodash": "^4.17.21",
-    "vue": "^2.6.10"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.11.0",
-    "@vue/cli-plugin-eslint": "^3.11.0",
-    "@vue/cli-service": "^3.11.0",
-    "babel-eslint": "^10.0.1",
-    "babel-plugin-component": "^1.1.1",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "node-sass": "^4.14.1",
-    "sass-loader": "^9.0.2",
-    "vue-cli-plugin-element": "^1.0.1",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ],
-  "bugs": {
-    "url": ""
-  },
-  "homepage": "",
-  "keyword": [
-    "tree-transfer",
-    "tree",
-    "transfer",
-    "vue",
-    "elemet-ui",
-    "element",
-    "addressList",
-    "vuecli3",
-    "穿梭框",
-    "树形穿梭框",
-    "通讯录",
-    "邮件通讯录"
-  ],
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": ""
-  }
+	"name": "eh-ui-plugin",
+	"version": "1.2.75",
+	"private": false,
+	"description": "A tree shaped shuttle box assembly based on Vue and element-ui 一个基于vue.js和element-ui的树形穿梭框，也可用于邮件通讯录",
+	"author": "Tantanzi",
+	"scripts": {
+		"serve": "vue-cli-service serve",
+		"build": "vue-cli-service build",
+		"lint": "vue-cli-service lint",
+		"lib": "node updated.js && vue-cli-service build --target lib --name eh-ui-plugin --dest lib packages/index.js"
+	},
+	"main": "lib/eh-ui-plugin.umd.min.js",
+	"dependencies": {
+		"axios": "^1.7.4",
+		"core-js": "^2.6.5",
+		"dayjs": "^1.11.13",
+		"eh-ui-plugin": "^1.2.65",
+		"element-ui": "^2.15.14",
+		"locale": "^0.1.0",
+		"lodash": "^4.17.21",
+		"vue": "^2.6.10"
+	},
+	"devDependencies": {
+		"@vue/cli-plugin-babel": "^3.11.0",
+		"@vue/cli-plugin-eslint": "^3.11.0",
+		"@vue/cli-service": "^3.11.0",
+		"babel-eslint": "^10.0.1",
+		"babel-plugin-component": "^1.1.1",
+		"eslint": "^5.16.0",
+		"eslint-plugin-vue": "^5.0.0",
+		"node-sass": "^4.14.1",
+		"sass-loader": "^9.0.2",
+		"vue-cli-plugin-element": "^1.0.1",
+		"vue-loader": "^15.9.6",
+		"vue-template-compiler": "^2.7.16"
+	},
+	"eslintConfig": {
+		"root": true,
+		"env": {
+			"node": true
+		},
+		"extends": [
+			"plugin:vue/essential",
+			"eslint:recommended"
+		],
+		"rules": {},
+		"parserOptions": {
+			"parser": "babel-eslint"
+		}
+	},
+	"postcss": {
+		"plugins": {
+			"autoprefixer": {}
+		}
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions"
+	],
+	"bugs": {
+		"url": ""
+	},
+	"homepage": "",
+	"keyword": [
+		"tree-transfer",
+		"tree",
+		"transfer",
+		"vue",
+		"elemet-ui",
+		"element",
+		"addressList",
+		"vuecli3",
+		"穿梭框",
+		"树形穿梭框",
+		"通讯录",
+		"邮件通讯录"
+	],
+	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"lastBuildTime": "2024-08-27 17:05:35"
 }

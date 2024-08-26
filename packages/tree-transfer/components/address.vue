@@ -212,7 +212,7 @@
 </template>
 
 <script>
-import {arrayToTree} from "@/components/js";
+import {arrayToTree} from "../../js";
 
 export default {
   name: "AddressBook",

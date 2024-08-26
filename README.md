@@ -8,7 +8,7 @@ tree-fransfer 是一个基于 VUE 和 element-ui 的树形穿梭框组件，使�
 
 因为公司业务使用 vue 框架，ui 库使用的 element-ui。在市面上找到一个好用的 vue 树形穿梭框组件都很难，又不想仅仅因为一个穿梭框在 element-ui 之外引入其他重量级插件，因此就有了 eh-ui-plugin。轻量，易用，无需投入其他学习成本。
 
-### [文档地址]() - [在线访问]() - [GitHub]() - [掘金]()
+### [文档地址](https://zhaoyifan-admin.github.io/tool-plugins/) - [在线访问]() - [GitHub]() - [掘金]()
 
 ### 重要更新
 

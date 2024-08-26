@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import treeTransfer from "./components/tree-transfer/";
+import treeTransfer from "../packages/tree-transfer/";
 
 // import {Message} from "element-ui";
 

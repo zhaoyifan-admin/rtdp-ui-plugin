@@ -47,6 +47,7 @@ export function checkIdNo(params) {
     for (let i = 17; i >= 0; i--) iSum += (Math.pow(2, i) % 11) * parseInt(params.charAt(17 - i), 11);
     return iSum % 11 == 1;
 }
+
 /**
  * 将树形数据向下递归为一维数组
  * @param {*} arr 数据源
@@ -67,7 +68,7 @@ export function flattenDeep(arr = [], childs = "Children") {
  * @param {*} array 数据源
  * @param {*} options 字段名配置项
  */
-export function arrayToTree(array = [], options = { id: "id", pid: "pid", children: "children", rootPidVal: null }) {
+export function arrayToTree(array = [], options = {id: "id", pid: "pid", children: "children", rootPidVal: null}) {
     let array_ = []; // 创建储存剔除叶子节点后的骨架节点数组
     let unique = {}; // 创建盒子辅助本轮children合并去重
     let root_pid = options.rootPidVal || [
@@ -109,4 +110,19 @@ export function arrayToTree(array = [], options = { id: "id", pid: "pid", childr
     } else {
         return array_;
     }
+}
+
+// 判断是否为空数据
+export function isFieldEmpty(obj, field) {
+    return obj[field] === null || obj[field] === undefined || obj[field] === '' || Array.isArray(obj[field]) && obj[field].length === 0;
+}
+
+// 将冗余空字段或数据进行删除
+export function deleteField(obj) {
+    return Object.keys(obj).reduce((result, key) => {
+        if (!isFieldEmpty(obj, key)) {
+            result[key] = obj[key];
+        }
+        return result;
+    }, {});
 }

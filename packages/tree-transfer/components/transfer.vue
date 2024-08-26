@@ -172,7 +172,7 @@
 <script>
 import { differenceBy } from "lodash";
 import { findParents } from "../assets/js";
-import {flattenDeep, arrayToTree} from "@/components/js";
+import {flattenDeep, arrayToTree} from "../../js";
 
 export default {
   name: "TransferTree",
