@@ -1,5 +1,5 @@
 import './index.scss'
-import {checkIdNo} from '@/components/js'
+import {checkIdNo, isFieldEmpty, deleteField} from '@/components/js'
 import treeTransfer from "./tree-transfer/";
 import {get, post, download, put, deleted, patch} from '@/components/js/axios'
 import {getLodop} from '@/components/js/lodop'
@@ -17,6 +17,8 @@ if (typeof window !== "undefined" && window.Vue) {
 }
 export {
     checkIdNo,
+    isFieldEmpty,
+    deleteField,
     get,
     post,
     download,
