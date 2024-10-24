@@ -1,6 +1,6 @@
 {
   "name": "rtdp-ui-plugin",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": false,
   "description": "一个服务与特定开发环境下的开发包，其他均不可使用",
   "author": "Tantanzi",
@@ -8,8 +8,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "node updated.js && vue-cli-service build --target lib --name rtdp-ui-plugin --dest lib packages/index.js",
-    "hotfix": "node build.js --type=hotfix --github=origin:master"
+    "lib": "vue-cli-service build --target lib --name rtdp-ui-plugin --dest lib packages/index.js",
+    "hotfix": "node build.js --type=hotfix --github=origin:master && vue-cli-service build --target lib --name rtdp-ui-plugin --dest lib packages/index.js"
   },
   "main": "lib/rtdp-ui-plugin.umd.min.js",
   "dependencies": {

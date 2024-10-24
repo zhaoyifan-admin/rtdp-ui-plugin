@@ -35,6 +35,7 @@ export function checkIdNo(params) {
         71: "台湾",
         81: "香港",
         82: "澳门",
+        83: "台湾省",
         91: "国外"
     };
     let iSum = 0;
@@ -43,9 +44,9 @@ export function checkIdNo(params) {
     if (aCity[parseInt(params.substr(0, 2))] == null) return false;
     const sBirthday = params.substr(6, 4) + "-" + Number(params.substr(10, 2)) + "-" + Number(params.substr(12, 2));
     const d = new Date(sBirthday.replace(/-/g, "/"));
-    if (sBirthday != (d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate())) return false;
+    if (sBirthday !== (d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate())) return false;
     for (let i = 17; i >= 0; i--) iSum += (Math.pow(2, i) % 11) * parseInt(params.charAt(17 - i), 11);
-    return iSum % 11 == 1;
+    return iSum % 11 === 1;
 }
 
 /**
