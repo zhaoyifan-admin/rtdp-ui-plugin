@@ -1,38 +1,31 @@
-# eh-ui-plugin
+# rtdp-ui-plugin
 
 ## 简介
 
-tree-fransfer 是一个基于 VUE 和 element-ui 的树形穿梭框组件，使用前请确认已经引入[element-ui](http://element.eleme.io/#/zh-CN/component/quickstart)！
-此组件功能类似于`element-ui`的[transfer](http://element.eleme.io/#/zh-CN/component/transfer)组件，但是里面的数据是树形结构！
-实际上，el-tree-transfer 依赖的 element-ui 组件分别是[Checkbox 多选框](http://element.eleme.io/#/zh-CN/component/checkbox#checkbox-duo-xuan-kuang)，[Button 按钮](http://element.eleme.io/#/zh-CN/component/button)，和最主要的[Tree 树形控件](http://element.eleme.io/#/zh-CN/component/tree)写成！并非是在 element-ui 的穿梭框组件上的扩展，而仅仅是参照了其外观样式和功能。
-
-因为公司业务使用 vue 框架，ui 库使用的 element-ui。在市面上找到一个好用的 vue 树形穿梭框组件都很难，又不想仅仅因为一个穿梭框在 element-ui 之外引入其他重量级插件，因此就有了 eh-ui-plugin。轻量，易用，无需投入其他学习成本。
+轻量，易用，无需投入其他学习成本。
 
 ### [文档地址](https://zhaoyifan-admin.github.io/tool-plugins/) - [在线访问]() - [GitHub]() - [掘金]()
 
 ### 重要更新
 
-> 2.4.1 修改事件addBtn为add-btn，removeBtn为remove-btn；增加拖拽；增加自定义节点slot；修复左右同时选中穿梭两次后的数据消失；搜索框增加清空；
-> 2.4.0 增加父子不关联穿梭功能
-> 2.3.3 修改穿梭匹配逻辑；增加rootPidValue参数。详细说明见下方版本说明
 
 ## 快速上手
 
 > 先 npm 下载插件
 
-`npm install eh-ui-plugin --save`
+`npm install rtdp-ui-plugin --save`
 
 或
 
-`npm i eh-ui-plugin -S`
+`npm i rtdp-ui-plugin -S`
 
 ```js
-import wl from "eh-ui-plugin";
-import "eh-ui-plugin/lib/eh-ui-plugin.css"
-Vue.use(wl);
+import rtdp from "rtdp-ui-plugin";
+import "rtdp-ui-plugin/lib/rtdp-ui-plugin.css"
+Vue.use(rtdp);
 ```
 
-> 然后你可以像使用普通组件一样使用 eh-ui-plugin
+> 然后你可以像使用普通组件一样使用 rtdp-ui-plugin
 
 ```js
     <template>
