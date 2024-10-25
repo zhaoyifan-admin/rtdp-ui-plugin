@@ -1,15 +1,19 @@
 export const canterAmVaa = {
     card: true,
     border: true,
-    index: true,
-    indexLabel: '序号',
+    selection: false,
     indexWidth: 70,
     searchLabelWidth: 145,
+    labelWidth: 145,
     searchBtnText: "搜索",
-    searchMenuSpan: 6,
-    searchSpan: 6,
+    searchMenuSpan: 8,
+    searchSpan: 8,
     align: 'center',
     maxHeight: 480,
+    menuWidth: 165,
+    editTitle: '审核',
+    updateBtnText: '保存审核结果',
+    cancelBtnText: '取消返回',
     columnBtn: false,
     addBtn: false,
     editBtn: false,
@@ -17,75 +21,151 @@ export const canterAmVaa = {
     size: 'mini',
     column: [{
         label: '卡类型',
-        prop: 'typeName',
-        search: true,
-        overHidden: true
-    }, {
-        label: '姓名',
-        prop: 'cardOwnerName',
-        search: true,
-        overHidden: true
-    }, {
-        label: '证件类型',
-        prop: 'idType',
-        width: 125,
-        overHidden: true
-    }, {
-        label: '证件号码',
-        prop: 'idCardNo',
-        width: 175,
-        search: true,
-        overHidden: true
-    }, {
-        label: '介质',
-        prop: 'sdasdsa',
-        overHidden: true
-    }, {
-        label: '剩余金额',
-        prop: 'asdasdasdas',
-        width: 125,
-        overHidden: true
-    }, {
-        label: '剩余次数',
-        prop: 'sadasdasdasdas',
-        width: 125,
-        overHidden: true
-    }, {
-        label: '柜面操作员',
-        prop: 'jfoskdofd',
-        width: 125,
-        overHidden: true
-    }, {
-        label: '账户创建日期',
-        prop: 'jdfosdjpo',
-        width: 125,
+        prop: 'cardTypeComplex',
+        type: "select",
+        dicUrl: '/center/basiccardtype/getCardTypeListByAsc',
+        props: {
+            label: 'typeName',
+            value: 'cardTypeComplex'
+        },
+        disabled: true,
+        width: 150,
         search: true,
         overHidden: true
     }, {
         label: '账户有效期',
-        prop: 'djfidshf8i',
-        width: 220,
+        prop: 'cardCheckDate',
+        disabled: true,
+        width: 160,
         overHidden: true
     }, {
+        label: '姓名',
+        prop: 'cardOwnerName',
+        disabled: true,
+        search: true,
+        overHidden: true
+    }, {
+        label: '联系方式',
+        prop: 'tel',
+        disabled: true,
+        placeholder: ' ',
+        hide: true
+    }, {
+        label: '证件类型',
+        prop: 'idType',
+        type: "select",
+        disabled: true,
+        dicData: [{
+            label: '身份证',
+            value: 1,
+        }, {
+            label: '护照',
+            value: 2,
+        }, {
+            label: '学生证',
+            value: 3,
+        }, {
+            label: '军官证',
+            value: 4,
+        }],
+        width: 125,
+        overHidden: true
+    }, {
+        label: '证件号码',
+        prop: 'idNo',
+        width: 220,
+        disabled: true,
+        search: true,
+        overHidden: true
+    }, /*{
+    label: '剩余金额',
+    prop: 'cardMoney',
+    width: 125,
+    search: true,
+    overHidden: true
+  }, {
+    label: '剩余次数',
+    prop: 'cardTimes',
+    width: 125,
+    search: true,
+    overHidden: true
+  }, */{
+        label: '柜面操作员',
+        prop: 'createUserName',
+        width: 255,
+        display: false,
+        overHidden: true
+    }, {
+        label: '账户创建日期',
+        prop: 'issueTime',
+        type: "daterange",
+        display: false,
+        searchRange: true,
+        width: 200,
+        search: true,
+        overHidden: true
+    }, {
+        label: '单位地区',
+        prop: 'unit',
+        disabled: true,
+        placeholder: ' ',
+        span: 24,
+        hide: true
+    }, {
+        label: '地址',
+        type: 'textarea',
+        prop: 'address',
+        disabled: true,
+        placeholder: ' ',
+        maxRows: 2,
+        span: 24,
+        hide: true
+    }, {
         label: '审核状态',
-        prop: 'orderReviewState',
+        prop: 'vcardState',
+        type: "select",
+        formslot: true,
+        dicData: [{
+            label: '审核未通过',
+            value: -1,
+        }, {
+            label: '审核通过',
+            value: 1,
+        }, {
+            label: '未审核',
+            value: 0,
+        }],
         width: 125,
         search: true,
         overHidden: true
     }, {
         label: '审核人员',
-        prop: 'kfopfkgfpdo',
+        prop: 'operateUserName',
+        display: false,
         width: 125,
         overHidden: true
     }, {
+        label: '',// 支付介质
+        prop: 'PaymentMedium',
+        labelWidth: 0,
+        span: 24,
+        formslot: true,
+        hide: true,
+        overHidden: true
+    }, {
         label: '审核时间',
-        prop: 'reviewTime',
+        prop: 'operateTime',
+        display: false,
         width: 125,
         overHidden: true
     }, {
         label: '审核备注',
-        prop: 'note',
+        prop: 'operateNote',
+        type: 'textarea',
+        disabled: false,
+        maxRows: 2,
         minWidth: 125,
+        span: 24,
         overHidden: true
     }]
 }
