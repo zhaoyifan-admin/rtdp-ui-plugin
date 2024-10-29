@@ -9,7 +9,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "lib": "vue-cli-service build --target lib --name rtdp-ui-plugin --dest lib packages/index.js",
-    "hotfix": "node build.js --type=hotfix --github=origin:master && vue-cli-service build --target lib --name rtdp-ui-plugin --dest lib packages/index.js && npm publish"
+    "hotfix": "node build.js --type=hotfix --github=origin:master && vue-cli-service build --target lib --name rtdp-ui-plugin --dest lib packages/index.js"
   },
   "main": "lib/rtdp-ui-plugin.umd.min.js",
   "dependencies": {
