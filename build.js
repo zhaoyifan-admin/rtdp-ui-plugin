@@ -47,6 +47,19 @@ if (version) {
   // pullRemote();
   handleGitCheckOut(github);
 }
+// 获取当前日期和时间
+let now = new Date();
+let formattedDate = `${now.getFullYear()}-${String(
+    now.getMonth() + 1
+).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")} ${String(
+    now.getHours()
+).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}:${String(
+    now.getSeconds()
+).padStart(2, "0")}`;
+
+// 更新最后打包时间
+packageJSON.lastBuildTime = formattedDate;
+console.log('==========更新package的lastBuildTime为：%s==========', formattedDate);
 
 /**
  * 根据分支类型处理版本号version
