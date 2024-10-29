@@ -1,6 +1,6 @@
 {
   "name": "rtdp-ui-plugin",
-  "version": "0.0.2",
+  "version": "0.0.10",
   "private": false,
   "description": "一个服务与特定开发环境下的开发包，其他均不可使用",
   "author": "Tantanzi",
