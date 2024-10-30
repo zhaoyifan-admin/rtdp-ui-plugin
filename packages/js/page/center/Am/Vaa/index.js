@@ -75,6 +75,7 @@ export const canterAmVaa = {
         prop: 'idNo',
         width: 220,
         disabled: true,
+        slot: true,
         search: true,
         overHidden: true
     }, /*{
