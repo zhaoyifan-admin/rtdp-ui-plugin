@@ -127,3 +127,9 @@ export function deleteField(obj) {
         return result;
     }, {});
 }
+
+// 证件脱敏
+export function desensitizeID(id) {
+    const regex18 = /^(\d{3})(\d{3})(\d{4})(\d{2})(\d{2})(\d{3})([0-9Xx])$/;
+    return id.replace(regex18, '$1***$3$4$5***$7');
+}
