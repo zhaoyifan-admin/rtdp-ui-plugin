@@ -4,6 +4,7 @@ import treeTransfer from "./tree-transfer";
 import {get, post, download, put, deleted, patch} from './js/axios'
 import {bd09_To_gps84, gcj02_To_Bd09, gcj02_To_Gps84, gps84_To_bd09} from './js/gps'
 import {canterAmVaa} from './js/page/center/Am/Vaa'
+import {canterAmArova} from './js/page/center/Am/Arova'
 
 const components = [treeTransfer];
 const install = function (Vue) {
@@ -32,6 +33,7 @@ export {
     gps84_To_bd09,
     //CRUD 文件
     canterAmVaa,
+    canterAmArova
 }
 export default {
     install,

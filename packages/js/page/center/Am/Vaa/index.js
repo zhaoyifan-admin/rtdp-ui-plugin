@@ -5,7 +5,7 @@ export const canterAmVaa = {
     indexWidth: 70,
     searchLabelWidth: 145,
     labelWidth: 145,
-    searchBtnText: "搜索",
+    searchBtnText: "搜 索",
     searchMenuSpan: 8,
     searchSpan: 8,
     align: 'center',
