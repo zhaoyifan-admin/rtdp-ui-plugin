@@ -56,7 +56,7 @@ export function getParametricEquation(startRatio, endRatio, isSelected, isHovere
     };
 }
 
-export function getPie3D(pieData, internalDiameterRatio,top, left, distance, color) {
+export function getPie3D(pieData, internalDiameterRatio, name, top, left, distance, color) {
     let series = [];
     let sumValue = 0;
     let startValue = 0;
@@ -109,6 +109,10 @@ export function getPie3D(pieData, internalDiameterRatio,top, left, distance, col
         legendData.push(series[i].name);
     }
     return {
+        title: {
+            show: true,
+            text: name ? name : '',
+        },
         legend: {
             left: "center",
             bottom: "0",
