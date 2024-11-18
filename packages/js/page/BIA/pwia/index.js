@@ -56,7 +56,7 @@ export function getParametricEquation(startRatio, endRatio, isSelected, isHovere
     };
 }
 
-export function getPie3D(pieData, internalDiameterRatio) {
+export function getPie3D(pieData, internalDiameterRatio,top, left, distance, color) {
     let series = [];
     let sumValue = 0;
     let startValue = 0;
@@ -155,18 +155,18 @@ export function getPie3D(pieData, internalDiameterRatio) {
         grid3D: {
             show: false,
             boxHeight: 10,//修改立体饼图的高度
-            top: '-10%',
-            left: '-10%',
+            top: top,
+            left: left,
             viewControl: {
                 alpha: 45,
                 beta: 30,
                 rotateSensitivity: 1,
                 zoomSensitivity: 0,
                 panSensitivity: 0,
-                distance: 285,
+                distance: distance,
             },
         },
-        color: ['#FF4B01', '#FF7B00', '#FFE823', '#2379FF', '#7B48DD', '#FC7A24', '#FFC000', '#FFEA97', '#49B1FF', '#6974E7'],
+        color: color,
         series,
     };
 }
