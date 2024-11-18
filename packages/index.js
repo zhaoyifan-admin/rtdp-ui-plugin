@@ -5,6 +5,7 @@ import {get, post, download, put, deleted, patch} from './js/axios'
 import {bd09_To_gps84, gcj02_To_Bd09, gcj02_To_Gps84, gps84_To_bd09} from './js/gps'
 import {canterAmVaa} from './js/page/center/Am/Vaa'
 import {canterAmArova} from './js/page/center/Am/Arova'
+import {getPie3D} from './js/page/BIA/pwia'
 
 const components = [treeTransfer];
 const install = function (Vue) {
@@ -33,7 +34,9 @@ export {
     gps84_To_bd09,
     //CRUD 文件
     canterAmVaa,
-    canterAmArova
+    canterAmArova,
+    //BIA 文件
+    getPie3D
 }
 export default {
     install,
