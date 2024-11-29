@@ -137,4 +137,7 @@
   .bottom-#{$i} {
     bottom: #{$i}px !important;
   }
+  .fs-#{$i} {
+    font-size: #{$i}px !important;
+  }
 }
