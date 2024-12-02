@@ -135,48 +135,56 @@ export function desensitizeID(id) {
 }
 
 export const getObjType = obj => {
-  const toString = Object.prototype.toString;
-  const map = {
-    '[object Boolean]': 'boolean',
-    '[object Number]': 'number',
-    '[object String]': 'string',
-    '[object Function]': 'function',
-    '[object Array]': 'array',
-    '[object Date]': 'date',
-    '[object RegExp]': 'regExp',
-    '[object Undefined]': 'undefined',
-    '[object Null]': 'null',
-    '[object Object]': 'object'
-  };
-  if (obj instanceof Element) {
-    return 'element'
-  }
-  return map[toString.call(obj)]
+    const toString = Object.prototype.toString;
+    const map = {
+        '[object Boolean]': 'boolean',
+        '[object Number]': 'number',
+        '[object String]': 'string',
+        '[object Function]': 'function',
+        '[object Array]': 'array',
+        '[object Date]': 'date',
+        '[object RegExp]': 'regExp',
+        '[object Undefined]': 'undefined',
+        '[object Null]': 'null',
+        '[object Object]': 'object'
+    };
+    if (obj instanceof Element) {
+        return 'element'
+    }
+    return map[toString.call(obj)]
 }
 /**
  * 对象深拷贝
  */
 export const deepClone = data => {
-  const type = getObjType(data);
-  let obj;
-  if (type === 'array') {
-    obj = []
-  } else if (type === 'object') {
-    obj = {}
-  } else {
-    // 不再具有下一层次
-    return data
-  }
-  if (type === 'array') {
-    let i = 0;
-    const len = data.length;
-    for (; i < len; i++) {
-      obj.push(deepClone(data[i]))
+    const type = getObjType(data);
+    let obj;
+    if (type === 'array') {
+        obj = []
+    } else if (type === 'object') {
+        obj = {}
+    } else {
+        // 不再具有下一层次
+        return data
     }
-  } else if (type === 'object') {
-    for (let key in data) {
-      obj[key] = deepClone(data[key])
+    if (type === 'array') {
+        let i = 0;
+        const len = data.length;
+        for (; i < len; i++) {
+            obj.push(deepClone(data[i]))
+        }
+    } else if (type === 'object') {
+        for (let key in data) {
+            obj[key] = deepClone(data[key])
+        }
     }
-  }
-  return obj
+    return obj
+}
+
+export function groupBy(array, key) {
+    return array.reduce((result, currentItem) => {
+        // 使用 key 作为 result 对象的键来获取或初始化分类数组
+        (result[currentItem[key]] = result[currentItem[key]] || []).push(currentItem);
+        return result;
+    }, {});
 }

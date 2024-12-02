@@ -6,7 +6,7 @@ import {bd09_To_gps84, gcj02_To_Bd09, gcj02_To_Gps84, gps84_To_bd09} from './js/
 import {canterAmVaa} from './js/page/center/Am/Vaa'
 import {canterAmArova} from './js/page/center/Am/Arova'
 import {getPie3D} from './js/page/BIA/pwia'
-import {setInitParams, setItemParams, setinfoListParams} from './js/page/rs'
+import {setInitParams, setItemParams, setinfoListParams, setListParams, reorganizingListParams, setbillcheckOption} from './js/page/rs'
 
 const components = [treeTransfer];
 const install = function (Vue) {
@@ -42,7 +42,10 @@ export {
     // 对账文件
     setInitParams,
     setItemParams,
-    setinfoListParams
+    setinfoListParams,
+    setListParams,
+    reorganizingListParams,
+    setbillcheckOption
 }
 export default {
     install,

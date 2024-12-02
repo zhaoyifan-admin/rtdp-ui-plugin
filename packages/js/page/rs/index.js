@@ -1,4 +1,6 @@
 /*对账系统*/
+import {groupBy} from "../../index";
+
 export function setInitParams(Array) {
     Array.forEach(item => {
         delete item.billConfig;
@@ -83,4 +85,87 @@ export function setListParams(dataArray, reorganizingData) {
         })
     })
     return reorganizingData;
+}
+
+export function reorganizingListParams(listItem) {
+    if (listItem.List.length > 0) {
+        const newObj = groupBy(listItem.List, 'bill_order')
+        const data = listItem.List[listItem.List.length - 1];
+        for (let key in newObj) {
+            listItem.Card.push(newObj[key])
+        }
+        listItem = setItemParams(listItem)
+        if (data.success_record_num !== null && data.trade_record_num !== null && data.bill_record_num !== null) {
+            listItem.charList = [{
+                value: data.success_record_num,
+                name: '成功'
+            }, {
+                value: (data.trade_record_today_num + data.trade_record_his_num + data.bill_record_num) - data.success_record_num * 2,
+                name: '异常'
+            }]
+        } else {
+            listItem.charList = [{
+                value: 0,
+                name: '成功'
+            }, {
+                value: 0,
+                name: '异常'
+            }]
+        }
+    } else {
+        listItem.charList = [{
+            value: 0,
+            name: '成功'
+        }, {
+            value: 0,
+            name: '异常'
+        }]
+    }
+    return listItem;
+}
+
+export function setbillcheckOption(color) {
+    return {
+        tooltip: {
+            trigger: 'item'
+        },
+        legend: {
+            orient: 'horizontal',
+            left: 'center',
+            bottom: "5%"
+        },
+        color: color,
+        series: [{
+            center: ['50%', '35%'],
+            type: 'pie',
+            radius: ['35%', '50%'],
+            avoidLabelOverlap: false,
+            itemStyle: {
+                borderRadius: 5,
+                borderColor: '#fff',
+                borderWidth: 1
+            },
+            label: {
+                show: false,
+                position: 'center'
+            },
+            emphasis: {
+                label: {
+                    show: true,
+                    fontSize: '15',
+                    fontWeight: 'bold'
+                }
+            },
+            labelLine: {
+                show: false
+            },
+            data: [{
+                value: 0,
+                name: '成功'
+            }, {
+                value: 0,
+                name: '异常'
+            }]
+        }]
+    }
 }
