@@ -77,6 +77,8 @@
   flex-wrap: nowrap;
 }
 
+/*定位属性*/
+
 .p-fixed {
   position: fixed !important;
 }
@@ -89,12 +91,156 @@
   position: absolute;
 }
 
+.d-none {
+  display: none;
+}
+
+.o-hidden {
+  overflow: hidden;
+}
+
+.o-scroll {
+  overflow: scroll;
+}
+
+.o-x-scroll {
+  overflow-x: scroll;
+}
+
+.o-y-scroll {
+  overflow-y: scroll;
+}
+
+.o-auto {
+  overflow: auto;
+}
+
+/*区块属性*/
 .t-left {
   text-align: left;
 }
 
 .t-right {
   text-align: right;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.t-justify {
+  text-align: justify;
+}
+.d-block {
+  display: block;
+}
+
+/*背景属性*/
+
+.bg-norepeat {
+  background-repeat: no-repeat;
+}
+.bg-repeat {
+  background-repeat: repeat;
+}
+.bg-repeat-x {
+  background-repeat: repeat-x;
+}
+.bg-repeat-y {
+  background-repeat: repeat-y;
+}
+
+.bg-a-flex {
+  background-attachment: fixed;
+}
+
+.bg-a-scroll {
+  background-attachment: scroll;
+}
+
+.bg-p-top {
+  background-position: top;
+}
+.bg-p-right {
+  background-position: right;
+}
+.bg-p-bottom {
+  background-position: bottom;
+}
+.bg-p-left {
+  background-position: left;
+}
+
+.bg-p-center {
+  background-position: center;
+}
+
+
+/*字体属性*/
+@for $i from 0 through 999 {
+  .font-size-#{$i} {
+    font-size: #{$i}px !important;
+  }
+  .l-height-#{$i} {
+    line-height: #{$i}px;
+  }
+  .font-weight-#{$i} {
+    font-weight: #{$i}px !important;
+  }
+}
+
+.font-oblique {
+  font-style: oblique;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.font-normal {
+  font-style: normal;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.font-weight-lighter {
+  font-weight: lighter;
+}
+
+.font-weight-normal {
+  font-weight: normal;
+}
+
+/*边框属性*/
+.border-dotted {
+  border-style: dotted;
+}
+
+.border-dashed {
+  border-style: dashed;
+}
+
+.border-solid {
+  border-style: solid;
+}
+
+.border-double {
+  border-style: double;
+}
+
+.border-groove {
+  border-style: groove;
+}
+
+@for $i from 0 through 999 {
+  .border-width-#{$i} {
+    border-width: #{$i}px;
+  }
+  .border-radius-#{$i} {
+    border-radius: #{$i}px;
+  }
 }
 
 /* 外边距、内边距全局样式
@@ -136,8 +282,5 @@
   }
   .bottom-#{$i} {
     bottom: #{$i}px !important;
-  }
-  .fs-#{$i} {
-    font-size: #{$i}px !important;
   }
 }

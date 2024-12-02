@@ -73,3 +73,14 @@ export function setinfoListParams(infoList) {
     return infoList;
 }
 
+export function setListParams(dataArray, reorganizingData) {
+    dataArray.map(item => {
+        reorganizingData.forEach(citem => {
+            if (item.bill_source === citem.billSource) {
+                citem.List.push(item)
+                citem.stepsIndex = citem.List[citem.List.length - 1]['bill_order'];
+            }
+        })
+    })
+    return reorganizingData;
+}

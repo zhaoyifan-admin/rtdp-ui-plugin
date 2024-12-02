@@ -24,6 +24,8 @@ stats.html
 tsconfig.config.json
 tsconfig.json
 vite.config.ts
+build.js
+updated.js
 
 *.map
 .idea
