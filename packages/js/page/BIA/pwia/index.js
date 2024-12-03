@@ -119,13 +119,13 @@ export function getPie3D(pieData, internalDiameterRatio, name, top, left, distan
             formatter: (name) => {
                 if (pieData.length) {
                     const item = pieData.filter((item) => item.name === name)[0];
-                    return `  ${name}：` + `${item.value}` + "个,占比：" + `${item.proportion}` + "%"
+                    return `  ${name}：` + `${item.value}` + "人次,占比：" + `${item.proportion}` + "%"
                 }
             },
         },
         tooltip: {
             formatter: (params) => {
-                return `${params.marker}${params.seriesName}：${pieData[params.seriesIndex].value}` + '个，占比：' + `${pieData[params.seriesIndex].proportion}` + '%';
+                return `${params.marker}${params.seriesName}：${pieData[params.seriesIndex].value}` + '人次，占比：' + `${pieData[params.seriesIndex].proportion}` + '%';
             },
         },
         labelLine: {

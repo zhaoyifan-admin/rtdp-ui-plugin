@@ -8,6 +8,15 @@ export function setInitParams(Array) {
         item.Loading = false;
         item.stepsIndex = 0;
         item.imgUrl = '/images/' + item.billSource + '.png';
+        if (item.billSource.split('_')[0].includes('alipay')) {
+            item.imgUrl = '/images/alipay.png'
+        }
+        if (['changAnTongCode', 'shiJiaZhuangFace', 'shiJiaZhuangWeChatCode', 'siChuanRuralCredit', 'tongCheng', 'tongLian'].includes(item.billSource)) {
+            item.imgUrl = '/images/default.png'
+        }
+        if (['tianfutong', 'tianFuTongCard', 'tianFuTongCode'].includes(item.billSource)) {
+            item.imgUrl = '/images/tianfutong.png'
+        }
         item.steps = [{
             title: "账单获取",
             status: "wait",
