@@ -5,7 +5,7 @@ import {get, post, download, put, deleted, patch} from './js/axios'
 import {bd09_To_gps84, gcj02_To_Bd09, gcj02_To_Gps84, gps84_To_bd09} from './js/gps'
 import {canterAmVaa} from './js/page/center/Am/Vaa'
 import {canterAmArova} from './js/page/center/Am/Arova'
-import {getPie3D} from './js/page/BIA/pwia'
+import {getPie3D} from './js/piecharts'
 import {setInitParams, setItemParams, setinfoListParams, setListParams, reorganizingListParams, setbillcheckOption} from './js/page/rs'
 
 const components = [treeTransfer];
