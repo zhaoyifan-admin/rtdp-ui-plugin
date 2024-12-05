@@ -1,22 +1,18 @@
 /*对账系统*/
 import {groupBy} from "../../index";
 
-export function setInitParams(Array) {
+export function setInitParams(Array, billSourceList) {
     Array.forEach(item => {
         delete item.billConfig;
         delete item.customConfig;
         item.Loading = false;
         item.stepsIndex = 0;
         item.imgUrl = '/images/' + item.billSource + '.png';
-        if (item.billSource.split('_')[0].includes('alipay')) {
-            item.imgUrl = '/images/alipay.png'
-        }
-        if (['changAnTongCode', 'shiJiaZhuangFace', 'shiJiaZhuangWeChatCode', 'siChuanRuralCredit', 'tongCheng', 'tongLian'].includes(item.billSource)) {
-            item.imgUrl = '/images/default.png'
-        }
-        if (['tianfutong', 'tianFuTongCard', 'tianFuTongCode'].includes(item.billSource)) {
-            item.imgUrl = '/images/tianfutong.png'
-        }
+        billSourceList.forEach(items => {
+            if (items.array.includes(item.billSource)) {
+                item.imgUrl = '/images/' + items.icon + '.png'
+            }
+        })
         item.steps = [{
             title: "账单获取",
             status: "wait",
