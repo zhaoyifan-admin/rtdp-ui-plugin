@@ -7,6 +7,8 @@ import {canterAmVaa} from './js/page/center/Am/Vaa'
 import {canterAmArova} from './js/page/center/Am/Arova'
 import {getPie3D} from './js/piecharts'
 import {setInitParams, setItemParams, setinfoListParams, setListParams, reorganizingListParams, setbillcheckOption} from './js/page/rs'
+import {analysisData} from './js/de'
+import {encryptionData} from './js/dd'
 
 const components = [treeTransfer];
 const install = function (Vue) {
@@ -34,6 +36,8 @@ export {
     gcj02_To_Bd09,
     gcj02_To_Gps84,
     gps84_To_bd09,
+    analysisData,
+    encryptionData,
     //CRUD 文件
     canterAmVaa,
     canterAmArova,

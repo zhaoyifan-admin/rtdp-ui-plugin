@@ -1,6 +1,6 @@
 {
   "name": "rtdp-ui-plugin",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "private": false,
   "description": "一个服务与特定开发环境下的开发包，其他均不可使用",
   "author": "Tantanzi",
@@ -19,6 +19,8 @@
     "element-ui": "^2.15.14",
     "locale": "^0.1.0",
     "lodash": "^4.17.21",
+    "mathjs": "^14.0.1",
+    "moment": "^2.30.1",
     "vue": "^2.6.10"
   },
   "devDependencies": {
