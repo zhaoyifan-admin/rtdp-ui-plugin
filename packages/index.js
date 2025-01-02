@@ -1,5 +1,5 @@
 import './index.scss'
-import {checkIdNo, isFieldEmpty, deleteField, desensitizeID, deepClone} from './js'
+import {checkIdNo, isFieldEmpty, deleteField, desensitizeID, deepClone, consoleLog} from './js'
 import treeTransfer from "./tree-transfer";
 import {get, post, download, put, deleted, patch} from './js/axios'
 import {bd09_To_gps84, gcj02_To_Bd09, gcj02_To_Gps84, gps84_To_bd09} from './js/gps'
@@ -21,6 +21,7 @@ if (typeof window !== "undefined" && window.Vue) {
     install(window.Vue);
 }
 export {
+    consoleLog,
     checkIdNo,
     isFieldEmpty,
     deleteField,
