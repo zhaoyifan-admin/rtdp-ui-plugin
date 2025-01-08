@@ -1,4 +1,6 @@
 /*数据解密处理====center服务*/
+import {consoleLog} from "./index";
+
 /**截取字符串一部分*/
 function GetSlice(str, start, end) {
     return str.slice(start, end)
@@ -161,7 +163,7 @@ export function encryptionData(data) {
         TabData2.lineCode = parseInt(GetSlice(simpleData1, 16, 24), 10);
         console.log('===========>Data file 2 decryption completed<==========')
         console.log('===========>Enter data file 3 for decryption<==========')
-        /**区域  "031900 006400000000 000000000000000000000000 03e8 000007d0"*/
+        /**区域*/
         TabData3.region = parseInt(GetSlice(simpleData4, 8, 9), 10);
         /**线路票制*/
         TabData3.lineticket = parseInt(GetSlice(simpleData4, 9, 10), 10);

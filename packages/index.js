@@ -1,6 +1,7 @@
 import './index.scss'
 import {checkIdNo, isFieldEmpty, deleteField, desensitizeID, deepClone, consoleLog} from './js'
 import treeTransfer from "./tree-transfer";
+import treeControl from './tree-control/index.vue'
 import {get, post, download, put, deleted, patch} from './js/axios'
 import {bd09_To_gps84, gcj02_To_Bd09, gcj02_To_Gps84, gps84_To_bd09} from './js/gps'
 import {canterAmVaa} from './js/page/center/Am/Vaa'
@@ -9,8 +10,9 @@ import {getPie3D} from './js/piecharts'
 import {setInitParams, setItemParams, setinfoListParams, setListParams, reorganizingListParams, setbillcheckOption} from './js/page/rs'
 import {analysisData} from './js/de'
 import {encryptionData} from './js/dd'
+import {constructTree, getPathByKey} from './js/tree'
 
-const components = [treeTransfer];
+const components = [treeTransfer, treeControl];
 const install = function (Vue) {
     components.forEach(component => {
         Vue.component(component.name, component);
@@ -39,6 +41,8 @@ export {
     gps84_To_bd09,
     analysisData,
     encryptionData,
+    constructTree,
+    getPathByKey,
     //CRUD 文件
     canterAmVaa,
     canterAmArova,
@@ -54,5 +58,6 @@ export {
 }
 export default {
     install,
-    treeTransfer
+    treeTransfer,
+    treeControl
 };

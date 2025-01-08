@@ -1,6 +1,7 @@
 /*数据加密处理====center服务*/
 import * as math from 'mathjs';
 import Moment from "moment";
+import {consoleLog} from "./index";
 
 /**字符串长度不够补0(前补位)（N位）*/
 function PrefixZero(data, N) {
@@ -99,7 +100,6 @@ export function analysisData(file, filesNum, tenantId) {
     let fileData7 = {};
     let fileData8 = {};
     if (filesNum === 1 && !GV.includes(Object.keys(file).length)) {
-        console.log('===========>Enter Data 1 Data Analysis<==========');
         if (!CGV.includes(file.deptCode)) fileData1.deptCode = PrefixZero(file.deptCode, 8); else fileData1.deptCode = PrefixZero("0", 8);
 
         if (!CGV.includes(file.groupCode)) fileData1.groupCode = PrefixZero(file.groupCode, 8); else fileData1.groupCode = PrefixZero("0", 8);
@@ -112,10 +112,9 @@ export function analysisData(file, filesNum, tenantId) {
         fileData1.tenantId = tenantId;
         fileData1.tenantName = "";
         fileData1.effectiveDate = DelChar(file.effectiveDate, "-");
-        console.log('===========>Data 1 Data Parsing Completed<==========');
+        consoleLog('===========>Data 1 Data Parsing Completed<==========')
     }
     if (filesNum === 2 && !GV.includes(Object.keys(file).length)) {
-        console.log('===========>Enter Data 2 Data Analysis<==========');
         if (!CGV.includes(file.deptCode) && !CGV.includes(file.groupCode) && !CGV.includes(file.lineCode)) {
             fileData2.deptCode = PrefixZero(file.deptCode.toString(), 8);
             fileData2.groupCode = PrefixZero(file.groupCode.toString(), 8);
@@ -125,20 +124,17 @@ export function analysisData(file, filesNum, tenantId) {
             fileData2.groupCode = PrefixZero("0", 8);
             fileData2.lineCode = PrefixZero("0", 8);
         }
-        console.log('===========>Data 2 Data Parsing Completed<==========');
+        consoleLog('===========>Data 2 Data Parsing Completed<==========')
     } else {
-        console.log('===========>Enter Data 2 Data Analysis<==========');
         fileData2.deptCode = PrefixZero("0", 8);
         fileData2.groupCode = PrefixZero("0", 8);
         fileData2.lineCode = PrefixZero("0", 8);
-        console.log('===========>Data 2 Data Parsing Completed<==========');
+        consoleLog('===========>Data 2 Data Parsing Completed<==========')
     }
-    console.log('===========>Enter Data 2 Data Splicing<==========');
     fileData2.simpleData = fileData2.deptCode + fileData2.groupCode + fileData2.lineCode;
-    console.log('===========>Data 2 Data Splicing Completed<==========');
+    consoleLog('===========>Data 2 Data Splicing Completed<==========')
 
     if (filesNum === 3 && !GV.includes(Object.keys(file).length)) {
-        console.log('===========>Enter Data 3 Data Analysis<==========');
         /**车辆类型*/
         if (!CGV.includes(file.region) && !CGV.includes(file.lineticket)) fileData3.vehicleType = ToString(file.region) + ToString(file.lineticket); else if (!CGV.includes(file.region) && CGV.includes(file.lineticket)) fileData3.vehicleType = ToString(file.region) + "0"; else if (CGV.includes(file.region) && !CGV.includes(file.lineticket)) fileData3.vehicleType = "0" + ToString(file.lineticket); else if (CGV.includes(file.region) && CGV.includes(file.lineticket)) fileData3.vehicleType = "00";
         /**月票消费次数*/
@@ -163,10 +159,9 @@ export function analysisData(file, filesNum, tenantId) {
         fileData3.platform = PrefixTwoZero(dec_to_hex(file.platform));
         /**禁用 M1 卡*/
         fileData3.disabledMcard = PrefixTwoZero(dec_to_hex(file.disabledMcard));
-        console.log('===========>Data 3 Data Parsing Completed<==========');
+        consoleLog('===========>Data 3 Data Parsing Completed<==========')
     }
     if (filesNum === 4 && !GV.includes(Object.keys(file).length)) {
-        console.log('===========>Enter Data 4 Data Analysis<==========');
         /**时间参数启用标志*/
         fileData4.timeFlag = bin_to_hex(ToString(file.peakcheck) + ToString(file.peakCoolcheck) + ToString(file.peakWarmcheck) + ToString(file.peakNightcheck) + "0000");
         let peakFirst = "";
@@ -219,9 +214,8 @@ export function analysisData(file, filesNum, tenantId) {
         fileData4.peakCool = peakCool;
         fileData4.peakWarm = peakWarm;
         fileData4.peakNight = peakNight;
-        console.log('===========>Data 4 Data Parsing Completed<==========');
+        consoleLog('===========>Data 4 Data Parsing Completed<==========')
     } else {
-        console.log('===========>Enter Data 4 Data Analysis<==========');
         fileData4.timeFlag = "00";
         fileData4.peakFirst = "00000000";
         fileData4.peakSecond = "00000000";
@@ -230,10 +224,9 @@ export function analysisData(file, filesNum, tenantId) {
         fileData4.peakCool = "00000000";
         fileData4.peakWarm = "00000000";
         fileData4.peakNight = "00000000";
-        console.log('===========>Data 4 Data Parsing Completed<==========');
+        consoleLog('===========>Data 4 Data Parsing Completed<==========')
     }
     if (filesNum === 5 && !GV.includes(Object.keys(file).length)) {
-        console.log('===========>Enter Data 5 Data Analysis<==========');
         /**钱包换乘*/
         if (!CGV.includes(file.wallet)) {
             fileData5.walletLineAllowed = ToString(file.walletLineAllowed)
@@ -275,13 +268,10 @@ export function analysisData(file, filesNum, tenantId) {
         /**换乘偏差*/
         if (CGV.includes(file.seconds)) fileData5.seconds = "0000"; else fileData5.seconds = PrefixZero(dec_to_hex(file.seconds), 4);
 
-        console.log('===========>Enter Data 5 Data Analysis<==========');
-        console.log('===========>Enter Data 5 Data Splicing<==========');
         fileData5.newDatafile = "070900" + fileData5.walletFile + fileData5.monthlyFile + fileData5.Transfer + fileData5.seconds;
-        console.log('===========>Data 5 Data Splicing Completed<==========');
+        consoleLog('===========>Data 5 Data Splicing Completed<==========')
     }
     if (filesNum === 6 && !GV.includes(Object.keys(file).length)) {
-        console.log('===========>Enter Data 6 Data Analysis<==========');
         /**卡类型参数*/
         file.forEach((item) => {
             /**赋值发卡机构*/
@@ -308,26 +298,23 @@ export function analysisData(file, filesNum, tenantId) {
             if (!CGV.includes(item.cardType) && !CGV.includes(item.cardSubType)) item.cardTypeParam = item.CardIssuer + PrefixTwoZero(dec_to_hex(item.cardType)) + PrefixTwoZero(dec_to_hex(item.cardSubType)) + item.Permissionbit + item.preferential + item.vuiceaddress; else item.cardTypeParam = item.CardIssuer + "00" + "00" + item.Permissionbit + item.preferential + item.vuiceaddress;
         })
         Object.assign(fileData6, file);
-        console.log('===========>Data 6 Data Parsing Completed<==========');
+        consoleLog('===========>Data 6 Data Parsing Completed<==========')
     }
     if (filesNum === 7 && !GV.includes(Object.keys(file).length)) {
-        console.log('===========>Enter Data 7 Data Analysis<==========');
         Object.assign(fileData7, file);
         /**用户名长度*/
         if (!CGV.includes(file.username)) fileData7.userlength = PrefixZero(dec_to_hex(file.username.length), 2); else fileData7.userlength = "00";
         /**密码长度*/
         if (!CGV.includes(file.password)) fileData7.paswlength = PrefixZero(dec_to_hex(file.password.length), 2); else fileData7.paswlength = "00";
-        console.log('===========>Data 7 Data Parsing Completed<==========');
+        consoleLog('===========>Data 7 Data Parsing Completed<==========')
     }
     if (filesNum === 8 && !GV.includes(Object.keys(file).length)) {
-        console.log('===========>Enter Data 8 Data Analysis<==========');
         Object.assign(fileData8, file);
-        console.log('===========>Data 8 Data Parsing Completed<==========');
+        consoleLog('===========>Data 8 Data Parsing Completed<==========')
     }
     if (filesNum === 11) {
-        console.log('===========>Enter Data 11 Data Analysis<==========');
         fileData1.effectiveDate = DelChar(file.effectiveDate, "-");
-        console.log('===========>Data 11 Data Parsing Completed<==========');
+        consoleLog('===========>Data 11 Data Parsing Completed<==========')
     }
 
     AllDataObject = {
@@ -340,7 +327,7 @@ export function analysisData(file, filesNum, tenantId) {
         fileData7: fileData7,
         fileData8: fileData8,
     };
-    console.log('===========>Analysis Data Parsing Completed<==========');
+    consoleLog('===========>Analysis Data Parsing Completed<==========')
     return AllDataObject;
 }
 

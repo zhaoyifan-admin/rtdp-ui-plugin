@@ -9,9 +9,9 @@ export function setInitParams(Array, billSourceList) {
         item.stepsIndex = 0;
         item.imgUrl = '/images/' + item.billSource + '.png';
         billSourceList.forEach(items => {
-            if (items.array.includes(item.billSource)) {
-                item.imgUrl = '/images/' + items.icon + '.png'
-            }
+            if (items.array.includes(item.billSource))
+                item.imgUrl = '/images/' + items.icon + '.png';
+
         })
         item.steps = [{
             title: "账单获取",
