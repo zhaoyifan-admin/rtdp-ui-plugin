@@ -43,6 +43,7 @@
 import VueContextMenu from '../tree-contextmenu/VueContextMenu.vue'
 
 export default {
+  name:'treeControl',
   components: {VueContextMenu},
   props: {
     title: {
