@@ -68,6 +68,16 @@ export default {
       default: function () {
         return {label: 'name', children: 'children'}
       }
+    },
+    menulists: {
+      type: Object,
+      default: function () {
+        return [
+          {fnHandler: 'handleAdd', icoName: 'el-icon-plus', btnName: '添加'},
+          {fnHandler: 'handleEdit', icoName: 'el-icon-edit', btnName: '编辑'},
+          {fnHandler: 'handleDelete', icoName: 'el-icon-delete', btnName: '删除'}
+        ]
+      }
     }
   },
   data() {
@@ -82,11 +92,7 @@ export default {
       contextMenuData: {
         menuName: 'demo',
         axis: {x: null, y: null},
-        menulists: [
-          {fnHandler: 'handleAdd', icoName: 'el-icon-plus', btnName: '添加'},
-          {fnHandler: 'handleEdit', icoName: 'el-icon-edit', btnName: '编辑'},
-          {fnHandler: 'handleDelete', icoName: 'el-icon-delete', btnName: '删除'}
-        ]
+        menulists: []
       }
     }
   },
@@ -96,6 +102,7 @@ export default {
       // 设置默认选中节点
       this.$refs.tree.setCurrentKey(this.treeData[0].id)
     }
+    this.contextMenuData.menulists = this.menulists;
   },
   methods: {
     // 点击右键,显示右键菜单
@@ -127,6 +134,10 @@ export default {
     handleEdit() {
       const data = JSON.parse(JSON.stringify(this.currentNodeNode))
       this.$emit('handleEdit', data)
+    },
+    // 点击回调时间
+    handleClickMenu(){
+
     },
     // 点击节点
     handleNodeClick(data) {
