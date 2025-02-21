@@ -2,38 +2,44 @@
   <div class="tree-container">
     <!-- tree过滤输入框 -->
     <el-input
-        class="searchInput"
-        v-model="filterText"
-        placeholder="输入关键字进行过滤"
-        suffix-icon="el-icon-search"
-        clearable
-        size="mini"
-        @input="filterTree"
+      class="searchInput"
+      v-model="filterText"
+      placeholder="输入关键字进行过滤"
+      suffix-icon="el-icon-search"
+      clearable
+      size="mini"
+      @input="filterTree"
     />
     <div class="treeDiv">
       <!-- 树形列表 -->
       <el-tree
-          ref="tree"
-          highlight-current
-          node-key="id"
-          :data="treeData"
-          :props="defaultProps"
-          :default-expanded-keys="treeData.length > 0 ? [treeData[0].id] : []"
-          :expand-on-click-node="true"
-          :current-node-key="currentNodeKey"
-          :filter-node-method="handleFilterNode"
-          @node-click="handleNodeClick"
-          @node-contextmenu="showMenu"
-          @handleAdd="handleAdd"
-          @handleEdit="handleEdit"
-          @handleDelete="handleDelete"
-      />
+        ref="tree"
+        highlight-current
+        node-key="id"
+        :show-checkbox="showCheckbox"
+        :data="treeData"
+        :props="defaultProps"
+        :default-expanded-keys="treeData.length > 0 ? [treeData[0].id] : []"
+        :expand-on-click-node="true"
+        :current-node-key="currentNodeKey"
+        :filter-node-method="handleFilterNode"
+        @check="handleChangeNode"
+        @node-click="handleNodeClick"
+        @node-contextmenu="showMenu"
+        @handleAdd="handleAdd"
+        @handleEdit="handleEdit"
+        @handleDelete="handleDelete"
+      >
+        <slot slot-scope="{ node, data }" :node="node" :data="data">
+          <span class="ceshislot">{{ node.label }}</span>
+        </slot>
+      </el-tree>
       <!-- 右键菜单 -->
       <vue-context-menu
-          :contextMenuData="contextMenuData"
-          @handleAdd="handleAdd"
-          @handleEdit="handleEdit"
-          @handleDelete="handleDelete"
+        :contextMenuData="contextMenuData"
+        @handleAdd="handleAdd"
+        @handleEdit="handleEdit"
+        @handleDelete="handleDelete"
       />
     </div>
   </div>
@@ -43,12 +49,16 @@
 import VueContextMenu from '../tree-contextmenu/VueContextMenu.vue'
 
 export default {
-  name:'treeControl',
+  name: 'treeControl',
   components: {VueContextMenu},
   props: {
     title: {
       type: String,
       default: '树形列表'
+    },
+    showCheckbox: {
+      type: Boolean,
+      default: false
     },
     // 树列表数据
     treeData: {
@@ -67,6 +77,15 @@ export default {
       type: Object,
       default: function () {
         return {label: 'name', children: 'children'}
+      }
+    },
+    renderContent: {
+      type: Function,
+      default: function (h, {node, data, store}) {
+        return (
+          <span class="custom-tree-node">
+            <span>{node.label}</span>
+          </span>);
       }
     },
     menulists: {
@@ -136,11 +155,12 @@ export default {
       this.$emit('handleEdit', data)
     },
     // 点击回调时间
-    handleClickMenu(){
+    handleClickMenu() {
 
     },
     // 点击节点
     handleNodeClick(data) {
+
     },
     // 关键字进行过滤节点
     handleFilterNode(value, data) {
@@ -148,10 +168,13 @@ export default {
       if (!value) return true
       // 是否包含关键字，不区分大小写
       return data.name.toLowerCase().includes(value.toLowerCase())
-
     },
     filterTree() {
       this.$refs.tree.filter(this.filterText)
+    },
+    handleChangeNode() {
+      const data = this.$refs["tree"].getCheckedKeys();
+      this.$emit('getCheckedData', data);
     }
   }
 }

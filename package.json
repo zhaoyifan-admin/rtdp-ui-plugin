@@ -1,6 +1,6 @@
 {
   "name": "rtdp-ui-plugin",
-  "version": "2.0.17",
+  "version": "2.0.18",
   "private": false,
   "description": "一个服务与特定开发环境下的开发包，其他均不可使用",
   "author": "Tantanzi",
@@ -17,6 +17,8 @@
     "core-js": "^2.6.5",
     "dayjs": "^1.11.13",
     "element-ui": "^2.15.14",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.0",
     "locale": "^0.1.0",
     "lodash": "^4.17.21",
     "mathjs": "^14.0.1",

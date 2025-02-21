@@ -11,6 +11,7 @@ import {setInitParams, setItemParams, setinfoListParams, setListParams, reorgani
 import {analysisData} from './js/de'
 import {encryptionData} from './js/dd'
 import {constructTree, getPathByKey} from './js/tree'
+import {PdfLoader} from './js/pdfLoader/index'
 
 const components = [treeTransfer, treeControl];
 const install = function (Vue) {
@@ -43,6 +44,7 @@ export {
     encryptionData,
     constructTree,
     getPathByKey,
+    PdfLoader,
     //CRUD 文件
     canterAmVaa,
     canterAmArova,
