@@ -12,6 +12,7 @@ import {analysisData} from './js/de'
 import {encryptionData} from './js/dd'
 import {constructTree, getPathByKey} from './js/tree'
 import {PdfLoader} from './js/pdfLoader/index'
+import {connectSignature} from './js/ConnectSignature'
 
 const components = [treeTransfer, treeControl];
 const install = function (Vue) {
@@ -45,6 +46,7 @@ export {
     constructTree,
     getPathByKey,
     PdfLoader,
+    connectSignature,
     //CRUD 文件
     canterAmVaa,
     canterAmArova,
