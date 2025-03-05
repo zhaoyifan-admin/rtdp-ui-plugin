@@ -1,4 +1,5 @@
 import moment from "moment";
+import { Message } from 'element-ui';
 
 const url = 'ws://localhost:1919';
 let webSocket;
@@ -83,32 +84,32 @@ export function connectWebSocket(url) {
     if (ErrorCode === 0) {
       console.log("-成功");
     } else if (ErrorCode === -1) {
-      console.log("传入参数错误");
+      Message.warning("传入参数错误");
     } else if (ErrorCode === -2) {
-      console.log("超时");
+      Message.error("超时");
     } else if (ErrorCode === -3) {
-      console.log("打开设备失败");
+      Message.warning("打开设备失败");
     } else if (ErrorCode === -4) {
-      console.log("写数据错误");
+      Message.error("写数据错误");
     } else if (ErrorCode === -5) {
-      console.log("-读数据错误");
+      Message.error("读取数据错误");
     } else if (ErrorCode === -6) {
-      console.log("文件不存在或者为空");
+      Message.error("文件不存在或者为空");
     } else if (ErrorCode === -7) {
-      console.log("设备返回错误信息");
+      Message.error("设备返回错误信息");
     } else if (ErrorCode === -9) {
-      console.log("取消操作");
+      Message.warning("用户取消操作");
     } else {
-      console.log("传入空间太小，内存错误" + ErrorCode);
+      Message.warning("传入空间太小，内存错误" + ErrorCode);
     }
   }
 
   function OnAfterGWQ_StartSign(ErrorCode, SignPdfBase64, SignNameBase64, FingerPrintBase64, MixBase64) {
     if (ErrorCode === 0) {
       GWQ_SetLineColor("000000");
-      console.log("电子签名成功");
+      Message.success("电子签名成功");
     } else if (ErrorCode === -9) {
-      console.log("取消操作");
+      Message.warning("用户取消操作");
     } else {
       console.log("错误信息" + ErrorCode);
     }
