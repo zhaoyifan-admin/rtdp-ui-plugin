@@ -1,7 +1,6 @@
 import moment from "moment";
 import { Message } from 'element-ui';
 
-const url = 'ws://localhost:1919';
 let webSocket;
 let GWQ_SetLineColorType = 106
 
@@ -108,6 +107,7 @@ export function connectWebSocket(url) {
     if (ErrorCode === 0) {
       GWQ_SetLineColor("000000");
       Message.success("电子签名成功");
+      webSocket.close()
     } else if (ErrorCode === -9) {
       Message.warning("用户取消操作");
     } else {
