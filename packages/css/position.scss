@@ -1,0 +1,21 @@
+$position: 'static', 'relative', 'absolute', 'fixed', 'sticky';
+@each $attribute in $position {
+  .d-#{$attribute} {
+    position: #{$attribute};
+  }
+}
+
+@for $i from 0 through 999 {
+  .top-#{$i} {
+    top: #{$i}px;
+  }
+  .left-#{$i} {
+    left: #{$i}px;
+  }
+  .right-#{$i} {
+    right: #{$i}px;
+  }
+  .bottom-#{$i} {
+    bottom: #{$i}px;
+  }
+}

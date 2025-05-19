@@ -1,0 +1,40 @@
+$background-position: 'top', 'right', 'bottom', 'left', 'center';
+@each $attribute in $background-position {
+  .background-position-#{$attribute} {
+    background-position: #{$attribute};
+  }
+}
+
+$background-attachment: 'scroll', 'fixed', 'local', 'initial', 'inherit';
+@each $attribute in $background-attachment {
+  .background-attachment-#{$attribute} {
+    background-attachment: #{$attribute};
+  }
+}
+
+$background-clip: 'border-box', 'padding-box', 'content-box';
+@each $attribute in $background-clip {
+  .background-clip-#{$attribute} {
+    background-clip: #{$attribute};
+  }
+}
+
+$background-origin: 'border-box', 'padding-box', 'content-box';
+@each $attribute in $background-origin {
+  .background-origin-#{$attribute} {
+    background-origin: #{$attribute};
+  }
+}
+
+$background-repeat: 'repeat', 'repeat-x', 'repeat-y', 'no-repeat', 'initial', 'inherit';
+@each $attribute in $background-repeat {
+  .background-repeat-#{$attribute} {
+    background-repeat: #{$attribute};
+  }
+}
+$background-size: 'cover', 'contain';
+@each $attribute in $background-size {
+  .background-size-#{$attribute} {
+    background-size: #{$attribute};
+  }
+}

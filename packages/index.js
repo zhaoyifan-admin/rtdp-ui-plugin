@@ -1,4 +1,4 @@
-import './index.scss'
+import '/css/index.scss'
 import {checkIdNo, isFieldEmpty, deleteField, desensitizeID, deepClone, consoleLog} from './js'
 import treeTransfer from "./tree-transfer";
 import treeControl from './tree-control'

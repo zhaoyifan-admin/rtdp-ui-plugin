@@ -1,0 +1,15 @@
+$border-style: 'none', 'hidden', 'dotted', 'dashed', 'solid', 'double', 'groove', 'ridge', 'inset', 'outset', 'inherit';
+@each $attribute in $border-style {
+  .border-style-#{$attribute} {
+    border-style: #{$attribute};
+  }
+}
+
+@for $i from 0 through 200 {
+  .border-width-#{$i} {
+    border-width: #{$i}px;
+  }
+  .border-radius-#{$i} {
+    border-radius: #{$i}px;
+  }
+}

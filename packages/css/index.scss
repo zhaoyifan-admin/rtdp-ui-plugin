@@ -1,0 +1,45 @@
+@import "background";
+@import "border";
+@import "flex";
+@import "position";
+@import "overflow";
+
+$border: 'content-box', 'border-box';
+@each $attribute in $border {
+  .box-sizing-#{$attribute} {
+    box-sizing: #{$attribute};
+  }
+}
+
+@for $i from 0 through 999 {
+  .margin-#{$i} {
+    margin: #{$i}px;
+  }
+  .margin-top-#{$i} {
+    margin-top: #{$i}px;
+  }
+  .margin-bottom-#{$i} {
+    margin-bottom: #{$i}px;
+  }
+  .margin-left-#{$i} {
+    margin-left: #{$i}px;
+  }
+  .margin-right-#{$i} {
+    margin-right: #{$i}px;
+  }
+  .padding-#{$i} {
+    padding: #{$i}px;
+  }
+  .padding-top-#{$i} {
+    padding-top: #{$i}px;
+  }
+  .padding-bottom-#{$i} {
+    padding-bottom: #{$i}px;
+  }
+  .padding-left-#{$i} {
+    padding-left: #{$i}px;
+  }
+  .padding-right-#{$i} {
+    padding-right: #{$i}px;
+  }
+}

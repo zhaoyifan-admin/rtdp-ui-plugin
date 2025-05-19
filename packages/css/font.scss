@@ -1,0 +1,35 @@
+$font-style: 'normal', 'italic', 'oblique', 'initial', 'inherit';
+@each $attribute in $font-style {
+  .font-style-#{$attribute} {
+    font-style: #{$attribute};
+  }
+}
+
+$font-variant: 'normal', 'small-caps', 'initial', 'inherit';
+@each $attribute in $font-variant {
+  .font-variant-#{$attribute} {
+    font-variant: #{$attribute};
+  }
+}
+
+$font-weight: 'normal', 'bold', 'bolder', 'lighter', 'initial', 'inherit';
+@each $attribute in $font-weight {
+  .font-weight-#{$attribute} {
+    font-weight: #{$attribute};
+  }
+}
+@for $i from 0 through 200 {
+  .font-size-#{$i} {
+    font-size: #{$i}px;
+  }
+  .line-height-#{$i} {
+    line-height: #{$i}px;
+  }
+}
+
+$text-align: 'left', 'right', 'center', 'justify', 'initial', 'inherit';
+@each $attribute in $text-align {
+  .text-align-#{$attribute} {
+    text-align: #{$attribute};
+  }
+}

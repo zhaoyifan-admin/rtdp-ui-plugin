@@ -1,0 +1,67 @@
+$display: 'block', 'inline', 'flex', 'grid', 'table', 'flow', 'flow-root', 'ruby', 'list-item', 'none', 'contents', 'inline-block', 'inline-table', 'inline-flex', 'inline-grid';
+@each $attribute in $display {
+  .d-#{$attribute} {
+    display: #{$attribute};
+  }
+}
+
+$flex-direction: 'row', 'row-reverse', 'column', 'column-reverse';
+@each $attribute in $flex-direction {
+  .flex-direction-#{$attribute} {
+    flex-direction: #{$attribute};
+  }
+}
+
+$flex-wrap: 'nowrap', 'wrap', 'wrap-reverse';
+@each $attribute in $flex-wrap {
+  .flex-wrap-#{$attribute} {
+    flex-wrap: #{$attribute};
+  }
+}
+
+$flex-flow: 'row', 'row-reverse', 'column', 'column-reverse', 'nowrap', 'wrap', 'wrap-reverse';
+@each $attribute in $flex-flow {
+  .flex-flow-#{$attribute} {
+    flex-flow: #{$attribute};
+  }
+}
+
+$justify-content: 'flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly';
+@each $attribute in $justify-content {
+  .justify-content-#{$attribute} {
+    justify-content: #{$attribute};
+  }
+}
+
+$align-items: 'stretch', 'flex-start', 'flex-end', 'flex-end', 'center', 'baseline';
+@each $attribute in $align-items {
+  .align-items-#{$attribute} {
+    align-items: #{$attribute};
+  }
+}
+
+$align-content: 'stretch', 'flex-start', 'flex-end', 'flex-end', 'center', 'space-between', 'space-around';
+@each $attribute in $align-content {
+  .align-content-#{$attribute} {
+    align-content: #{$attribute};
+  }
+}
+
+$align-self: 'auto', 'flex-start', 'flex-end', 'flex-end', 'center', 'baseline', 'stretch';
+@each $attribute in $align-self {
+  .align-self-#{$attribute} {
+    align-self: #{$attribute};
+  }
+}
+
+@for $i from 0 through 500 {
+  .order-#{$i} {
+    order: #{$i};
+  }
+  .flex-grow-#{$i} {
+    flex-grow: #{$i};
+  }
+  .flex-shrink-#{$i} {
+    flex-shrink: #{$i};
+  }
+}

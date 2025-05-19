@@ -1,0 +1,27 @@
+$overflow: 'visible', 'hidden', 'scroll', 'auto', 'inherit';
+@each $attribute in $overflow {
+  .overflow-#{$attribute} {
+    overflow: #{$attribute};
+  }
+}
+
+$overflow-wrap: 'normal', 'anywhere', 'break-word', 'initial', 'inherit';
+@each $attribute in $overflow-wrap {
+  .overflow-wrap-#{$attribute} {
+    overflow-wrap: #{$attribute};
+  }
+}
+
+$overflow-x: 'visible', 'hidden', 'scroll', 'auto', 'no-display', 'no-content';
+@each $attribute in $overflow-x {
+  .overflow-x-#{$attribute} {
+    overflow-x: #{$attribute};
+  }
+}
+
+$overflow-y: 'visible', 'hidden', 'scroll', 'auto', 'no-display', 'no-content';
+@each $attribute in $overflow-y {
+  .overflow-y-#{$attribute} {
+    overflow-y: #{$attribute};
+  }
+}
