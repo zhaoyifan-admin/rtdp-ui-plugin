@@ -3,6 +3,7 @@
 @import "flex";
 @import "position";
 @import "overflow";
+@import "font";
 
 $border: 'content-box', 'border-box';
 @each $attribute in $border {
