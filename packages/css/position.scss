@@ -1,6 +1,6 @@
 $position: 'static', 'relative', 'absolute', 'fixed', 'sticky';
 @each $attribute in $position {
-  .d-#{$attribute} {
+  .position-#{$attribute} {
     position: #{$attribute};
   }
 }
