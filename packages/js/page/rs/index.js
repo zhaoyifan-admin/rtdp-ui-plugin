@@ -165,10 +165,10 @@ export function setbillcheckOption(color,data) {
                 show: false
             },
             data: [{
-                value: data['成功'].value,
+                value: data[0].value,
                 name: '成功'
             }, {
-                value: data['异常'].value,
+                value: data[1].value,
                 name: '异常'
             }]
         }]
