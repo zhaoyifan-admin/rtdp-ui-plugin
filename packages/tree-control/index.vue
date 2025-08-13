@@ -31,7 +31,7 @@
         @handleDelete="handleDelete"
       >
         <slot slot-scope="{ node, data }" :node="node" :data="data">
-          <span class="ceshislot">{{ node.label }}</span>
+          <span>{{ node.label }}</span>
         </slot>
       </el-tree>
       <!-- 右键菜单 -->

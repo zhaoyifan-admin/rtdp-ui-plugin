@@ -129,7 +129,7 @@ export function reorganizingListParams(listItem) {
     return listItem;
 }
 
-export function setbillcheckOption(color) {
+export function setbillcheckOption(color,data) {
     return {
         tooltip: {
             trigger: 'item'
@@ -165,10 +165,10 @@ export function setbillcheckOption(color) {
                 show: false
             },
             data: [{
-                value: 0,
+                value: data['成功'].value,
                 name: '成功'
             }, {
-                value: 0,
+                value: data['异常'].value,
                 name: '异常'
             }]
         }]
